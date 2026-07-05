@@ -14,9 +14,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy server code
-COPY server.py .
-COPY config.py .
+# Copy all server code and modules (YAHAN CHANGE KIYA HAI 👇)
+COPY . .
 
 # Create directories
 RUN mkdir -p /tmp/meetlink_recordings /tmp/meetlink_uploads
